@@ -42,66 +42,114 @@
         <div class = "row">
             <!--Row for Billing/Shipping Address, Radio buttons, and payment section-->
             <div class = "col-8" style="border: 5px solid red;">
-                <h5>
-                    Billing address
-                </h5>
-
-                <hr>
-                <!--CHECKBOX SECTION-->
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="shippingCheck">
-                    <label class="custom-control-label" for="shippingCheck">Shipping address is the same as my billing address</label>
-                </div>
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="saveInformationCheck">
-                    <label class="custom-control-label" for="saveInformationCheck">Save this information for next time</label>
-                </div>
-                <!--END OF CHECKBOX SECTION-->
-                <hr>
-                <!--PAYMENT SECTION-->
-                <h5>
-                    Payment
-                </h5>
-                <!--Payment radio buttons-->
-                <div class="custom-control custom-radio">
-                    <input type="radio" name="customPayment"  class="custom-control-input" id="creditCard">
-                    <label class="custom-control-label" for="creditCard">Credit card</label>
-                </div>
-                
-                <div class="custom-control custom-radio">
-                    <input type="radio" name="customPayment"  class="custom-control-input" id="debitCard">
-                    <label class="custom-control-label" for="debitCard">Debit card</label>
-                </div>
-                
-                <div class="custom-control custom-radio">
-                    <input type="radio" name="customPayment"  class="custom-control-input" id="paypal">
-                    <label class="custom-control-label" for="paypal">Paypal</label>
-                </div>
-                <!--End of payment radio buttons-->
-
-                <!--Credit card input field-->
-                <div class = "row">
-                    <div class = "col-6" style="border: 5px solid yellow;">
-                        Name on card
-                        <div class = "row">
-                            <div class = "col-6" style="border: 5px solid green;">
-                                Expiration
+                <form class = "needs-validation" novalidate>
+                    <span>
+                        <h5>
+                            Billing address
+                        </h5>
+                        <span>
+                            <div class = "row">
+                                <div class = "col-6">
+                                    <label for="firstName">
+                                        First name
+                                    </label>
+                                    <input type = "text" class="form-control" id="firstName" required>
+                                    <div class = "invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+                                <div class = "col-6">
+                                    <label for="lastName">
+                                        Last name
+                                    </label>
+                                    <input type = "text" class="form-control" id="lastName" required>
+                                    <div class = "invalid-feedback">
+                                        Valid last name is required.
+                                    </div>
+                                </div>
                             </div>
-                            <div class = "col-6" style="border: 5px solid purple;">
-                                CVV
+
+                        </span>
+                        <hr>
+                        <!--CHECKBOX SECTION-->
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="shippingCheck">
+                            <label class="custom-control-label" for="shippingCheck">Shipping address is the same as my billing address</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="saveInformationCheck">
+                            <label class="custom-control-label" for="saveInformationCheck">Save this information for next time</label>
+                        </div>
+                        <!--END OF CHECKBOX SECTION-->
+                        <hr>
+                        <!--PAYMENT SECTION-->
+                        <h5>
+                            Payment
+                        </h5>
+                        <!--Payment radio buttons-->
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="customPayment"  class="custom-control-input" id="creditCard">
+                            <label class="custom-control-label" for="creditCard">Credit card</label>
+                        </div>
+                        
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="customPayment"  class="custom-control-input" id="debitCard">
+                            <label class="custom-control-label" for="debitCard">Debit card</label>
+                        </div>
+                        
+                        <div class="custom-control custom-radio">
+                            <input type="radio" name="customPayment"  class="custom-control-input" id="paypal">
+                            <label class="custom-control-label" for="paypal">Paypal</label>
+                        </div>
+                        <!--End of payment radio buttons-->
+        
+                        <!--Credit card input field-->
+                        <div class = "row">
+                            <div class = "col-6" style="border: 5px solid yellow;">
+                                    <label for="creditName">Name on card</label>
+                                    <input type="text" class="form-control" id="creditName" required>
+                                    <small id="creditName" class="form-text text-muted">Full name as displayed on card</small>
+                                    <div class = "invalid-feedback">
+                                        Name on card is required
+                                    </div>
+                                <div class = "row">
+                                    <div class = "col-6" style="border: 5px solid green;">
+                                        <label for="creditExpiration">Expiration</label>
+                                        <input type="text" class="form-control" id="creditExpiration" required>
+                                        <div class = "invalid-feedback">
+                                            Expiration date is required
+                                        </div>
+                                    </div>
+                                    <div class = "col-6" style="border: 5px solid purple;">
+                                        <label for="creditCVV">CVV</label>
+                                        <input type="text" class="form-control" id="creditCVV" required>
+                                        <div class = "invalid-feedback">
+                                            Security code is required
+                                        </div>
+                                    </div>
+                                </div>
+    
+    
+                            </div>
+                            <div class = "col-6" style="border: 5px solid orange;">
+                                <label for="creditNumber">Credit card number</label>
+                                <input type="text" class="form-control" id="creditNumber" required>
+                                <div class = "invalid-feedback">
+                                    Credit card number is required
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class = "col-6" style="border: 5px solid orange;">
-                        Credit card number
-                    </div>
-                </div>
-                <!--End of credit card input field -->
-                <hr>
-                <button type = "button" class = "btn btn-primary btn-lg btn-block">
-                    Continue to checkout
-                </button>
-                <!--END OF PAYMENT SECTION-->
+                        <!--End of credit card input field -->
+                        <hr>
+                        
+                        <button type = "button" class = "btn btn-primary btn-lg btn-block" type = "submit">
+                            Continue to checkout
+                        </button>
+                        <!--END OF PAYMENT SECTION-->
+
+                    </span>
+
+                </form>
             </div>
             <div class = "col-4" style="border: 5px solid blue;">
                 <h5>
