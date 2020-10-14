@@ -38,14 +38,16 @@
             </div>
         </div>
 
-        <!--Div for Billing Address and Cart-->
+        <!--Div for Billing Address and Cart and Payment-->
         <div class = "row">
+            <!--Row for Billing/Shipping Address, Radio buttons, and payment section-->
             <div class = "col-8" style="border: 5px solid red;">
                 <h5>
                     Billing address
                 </h5>
 
                 <hr>
+                <!--CHECKBOX SECTION-->
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="shippingCheck">
                     <label class="custom-control-label" for="shippingCheck">Shipping address is the same as my billing address</label>
@@ -54,11 +56,13 @@
                     <input type="checkbox" class="custom-control-input" id="saveInformationCheck">
                     <label class="custom-control-label" for="saveInformationCheck">Save this information for next time</label>
                 </div>
+                <!--END OF CHECKBOX SECTION-->
                 <hr>
+                <!--PAYMENT SECTION-->
                 <h5>
                     Payment
                 </h5>
-
+                <!--Payment radio buttons-->
                 <div class="custom-control custom-radio">
                     <input type="radio" name="customPayment"  class="custom-control-input" id="creditCard">
                     <label class="custom-control-label" for="creditCard">Credit card</label>
@@ -73,6 +77,31 @@
                     <input type="radio" name="customPayment"  class="custom-control-input" id="paypal">
                     <label class="custom-control-label" for="paypal">Paypal</label>
                 </div>
+                <!--End of payment radio buttons-->
+
+                <!--Credit card input field-->
+                <div class = "row">
+                    <div class = "col-6" style="border: 5px solid yellow;">
+                        Name on card
+                        <div class = "row">
+                            <div class = "col-6" style="border: 5px solid green;">
+                                Expiration
+                            </div>
+                            <div class = "col-6" style="border: 5px solid purple;">
+                                CVV
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "col-6" style="border: 5px solid orange;">
+                        Credit card number
+                    </div>
+                </div>
+                <!--End of credit card input field -->
+                <hr>
+                <button type = "button" class = "btn btn-primary btn-lg btn-block">
+                    Continue to checkout
+                </button>
+                <!--END OF PAYMENT SECTION-->
             </div>
             <div class = "col-4" style="border: 5px solid blue;">
                 <h5>
