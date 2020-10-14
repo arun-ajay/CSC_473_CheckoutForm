@@ -22,7 +22,9 @@
 </head>
 
 <body class = "bg-light">
+    
     <div class = "container">
+        <form class = "needs-validation" novalidate>
         <!--Div for header-->
         <div class = "row">
             <div class = "text-center">
@@ -39,16 +41,16 @@
         </div>
 
         <!--Div for Billing Address and Cart and Payment-->
+
         <div class = "row">
             <!--Row for Billing/Shipping Address, Radio buttons, and payment section-->
             <div class = "col-8" style="border: 5px solid red;">
-                <form class = "needs-validation" novalidate>
                     <span>
                         <h4 class = "text-muted">
                             Billing address
                         </h4>
                         <br>
-                        <div class = "row">
+                        <div class = "form-row">
                             <div class = "col-6">
                                 <label for="firstName">
                                     First Name
@@ -178,7 +180,7 @@
                                 </label>
                                 <input type = "address" class = "form-control" id="address" placeholder="1234 Main St" required>
                                 <div class = "invalid-feedback">
-                                    Please enter a valid billing address.
+                                    Please enter a valid shipping address.
                                 </div>
                             </div>
                             <div class = "col-12">
@@ -258,7 +260,7 @@
                         <label class="custom-control-label" for="paypal">Paypal</label>
                     </div>
                     <!--End of payment radio buttons-->
-    
+
                     <!--Credit card input field-->
                     <div class = "row">
                         <div class = "col-6" style="border: 5px solid yellow;">
@@ -298,13 +300,10 @@
                     <!--End of credit card input field -->
                     <hr>
                     
-                    <button type = "button" class = "btn btn-primary btn-lg btn-block" type = "submit">
+                    <button class = "btn btn-primary btn-lg btn-block" type = "submit">
                         Continue to checkout
                     </button>
                     <!--END OF PAYMENT SECTION-->
-
-
-                </form>
             </div>
             <div class = "col-4" style="border: 5px solid blue;">
                 <h4 class = "text-muted">
@@ -407,7 +406,7 @@
                         <div class = "input-group">
                             <input type = "text" class = "form-control" placeholder="Promo code">
                             <div class = "input-group-append">
-                                <button type = "submit" class = "btn btn-secondary">
+                                <button type = "button" class = "btn btn-secondary">
                                     Redeem
                                 </button>
                             </div>
@@ -440,8 +439,6 @@
         </footer>
     </div>
 
-
-  <script src="js/scripts.js"></script>
   <script>
       function toggleShipping(){
           var shippingID = document.getElementById("shippingID");
@@ -453,5 +450,27 @@
           }
       }
   </script>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+    </script>
+
 </body>
 </html>
